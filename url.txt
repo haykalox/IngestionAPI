@@ -1,0 +1,1 @@
+ spark-submit --class com.api.test --files application.conf --driver-java-options -Dconfig.file=application.conf Api-0.1-jar-with-dependencies.jar
