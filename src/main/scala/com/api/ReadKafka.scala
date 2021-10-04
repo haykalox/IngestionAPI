@@ -17,7 +17,9 @@ object ReadKafka {
       .option("subscribe", "streaming-test")
       .load()
 
-    val query = df.writeStream
+    val newDF = df.selectExpr("CAST(value AS STRING)")
+
+    val query = newDF.writeStream
       .outputMode("append")
       .format("console")
       .start()
